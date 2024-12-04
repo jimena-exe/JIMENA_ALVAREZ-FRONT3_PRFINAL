@@ -6,15 +6,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Routes/Home";
 import Favs from "./Routes/Favs";
 import Contact from "./Routes/Contact";
+import Detail from "./Routes/Detail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/Home" element={<Home />} />
-      <Route path="/Favs" element={<Favs />} />
-      <Route path="/Contact" element={<Contact />} />
+      <Route path="/" element={<App />}>
+        <Route path="home" element={<Home />} />
+        <Route path="favs" element={<Favs />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="dentist/:id" element={<Detail />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 );
