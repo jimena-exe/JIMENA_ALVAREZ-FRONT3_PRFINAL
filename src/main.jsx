@@ -7,17 +7,21 @@ import Home from "./Routes/Home";
 import Favs from "./Routes/Favs";
 import Contact from "./Routes/Contact";
 import Detail from "./Routes/Detail";
+import { ContextProvider } from "./Components/utils/global.context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="home" element={<Home />} />
-        <Route path="favs" element={<Favs />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="dentist/:id" element={<Detail />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+  <ContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="home" element={<Home />} />
+          <Route path="favs" element={<Favs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="dentist/:id" element={<Detail />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </ContextProvider>
+  
 );

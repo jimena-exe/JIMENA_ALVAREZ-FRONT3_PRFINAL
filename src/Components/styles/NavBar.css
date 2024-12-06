@@ -1,0 +1,35 @@
+.containerNavBar {
+    justify-content: space-around;
+    width: 70%;
+}
+.containerNavBar.light {
+    background-color: lightskyblue;
+    color: #000;
+}
+
+.containerNavBar.dark {
+    background-color: #333;
+    color: #fff;
+}
+.containerNavBar a{
+    padding: 5px;
+}
+.containerNavBar a:hover{
+    background-color: rgb(90, 142, 187);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.containerNavBar button{
+    background-color: rgb(90, 142, 187);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+  
+  
+button:hover {
+    opacity: 0.8;   
+}
