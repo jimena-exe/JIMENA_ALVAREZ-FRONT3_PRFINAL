@@ -1,10 +1,10 @@
 import { createContext, useMemo, useState } from "react";
-import { data } from "react-router-dom";
-import PropTypes from "prop-types";
+// import { data } from "react-router-dom";
+// import PropTypes from "prop-types";, data: [{backgroundColor: "#fff"}]
 
-export const initialState = {theme: "light", data: []}
+export const initialState = {theme: "light", data:[{backgroundColor:" #fff", color:"black"}]} 
 
-export const ContextGlobal = createContext(undefined);
+export const ContextGlobal = createContext(initialState);
 
 export const ContextProvider = ({ children }) => {
 
@@ -20,9 +20,9 @@ export const ContextProvider = ({ children }) => {
 
   const valorMemo = useMemo(() => ({
     theme: estado.theme,
-    data: estado.data,
     cambiarTema,
-  }), [estado]);
+  }), [estado.theme]);
+  
 
   return (
     <ContextGlobal.Provider value={{valorMemo}}>
@@ -31,6 +31,9 @@ export const ContextProvider = ({ children }) => {
   );
 };
 
-ContextProvider.propTypes = {
-  children: PropTypes.node.isRequired, // 'children' debe ser un nodo React y es obligatorio
-};
+
+// ContextProvider.propTypes = {
+//   children: PropTypes.node.isRequired, // 'children' debe ser un nodo React y es obligatorio
+// };
+
+// , data: [{backgroundColor: "#fff"}]

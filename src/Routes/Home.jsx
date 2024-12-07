@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../Components/Card";
+import axios from "axios";
+import "../Components/styles/Home.css";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Home = () => {
+  const [chars, setChars] = useState([]);
+  const url = "https://jsonplaceholder.typicode.com/users";
+
+  useEffect(() => {
+    axios(url)
+      .then((respuesta) => {
+        console.log(respuesta.data);
+        
+        setChars(respuesta.data);
+      });
+  }, []);
+
   return (
-    <main className="">
+    <main className="contenedorHome">
       <h1>Home</h1>
       <div className="card-grid">
-        {/* Aqui deberias renderizar las cards */}
+        {chars.map((char) => (
+          <Card key={char.id} name={char.name} username={char.username} />
+        ))}
       </div>
     </main>
   );
 };
+
+
+
 
 export default Home;
 

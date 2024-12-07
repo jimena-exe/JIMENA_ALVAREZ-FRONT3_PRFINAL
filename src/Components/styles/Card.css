@@ -1,0 +1,22 @@
+.card{
+    background-color: antiquewhite;
+}
+.card img{
+    width: 80%;
+
+}
+.card nav{
+    width: 90%;
+    font-size: small;
+    border-radius: 8px;
+    display: flex;
+}
+
+.card nav a{
+    margin: 0px;
+    align-items: center;
+}
+
+.favButton{
+    margin: 10px;
+}

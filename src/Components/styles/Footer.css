@@ -2,5 +2,6 @@ footer{
     align-items: center;
     background-color: lightskyblue;
     width: 90%;
-    position: absolute;
+    position: relative;
+    bottom: 0px;
 }
